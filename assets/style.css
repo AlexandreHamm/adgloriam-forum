@@ -14,17 +14,26 @@
     font-family: 'Scurlock';
     src: url(../src/fonts/Scurlock.TTF);
 }
+@font-face {
+    font-family: 'Imperator';
+    src: url(../src/fonts/Imperator.ttf);
+}
+@font-face {
+    font-family: 'OldStyle';
+    src: url(../src/fonts/OldStyle.TTF);
+}
 :root{
         /* FONTS */
     --dumbledor: 'Dumbledor', Arial, Sans-serif;
+    --imperator: 'Imperator', Arial, Serif;
     --louisgeorgecafe: 'Louis George Cafe', Arial, Sans-serif;
+    --oldstyle: 'OldStyle', Arial, Serif;
     --scurlock: 'Scurlock', Arial, Sans-serif;
     --signature: 'Amalfi Coast', Arial, Sans-serif;
         /* COLORS */
     --black: #222;
-    --green: #090;
-    --grey: rgb(172, 172, 172);
-    --kaki: #69706e;
+    --gold: rgb(196, 176, 0);
+    --grey: #888;
     --white: #FFF;
     --inputBorder: 1px solid rgb(172, 172, 172);
 }
@@ -39,10 +48,19 @@ body{
     overflow: hidden;
     background-color: var(--black);
 }
+main{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
 .ag-cookies{
     width: 100%;
     height: 150px;
-    background-color: var(--black);
+    background-color: rgb(77, 63, 48);
     transition: .3s;
     overflow: hidden;
     display: flex;
@@ -64,7 +82,7 @@ body{
     max-height: 100%;
 }
 .logo-path{
-    fill: var(--white);
+    fill: #CCC;
 }
 .ag-cookies__btns{
     height: 95%;
@@ -76,7 +94,7 @@ body{
     cursor: pointer;
     font-family: var(--dumbledor);
     font-size: 18px;
-    color: var(--grey);
+    color: #CCC;
     padding: 5px 15px;
     background: none;
     border: 1px solid var(--white);
@@ -85,24 +103,7 @@ body{
 .ag-cookies__btns > button:hover{
     filter: brightness(150%);
 }
-main{
-    width: 100%;
-    height: 100%;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-}
-.background{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -10;
-    width: 100vw;
-    filter: brightness(20%);
-}
+
 .ag-content{
     width: 50%;
     height: auto;
@@ -112,25 +113,24 @@ main{
 .ag-content__header{
     width: 100%;
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../src/img/marble.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 6em 1em #000;
+    opacity: 80%;
+}
+.ag-content__header > img{
+    max-width: 110%;
+    opacity: 80%;
 }
 .ag-content__body{
     width: 100%;
     height: 200vh;
-    background-color: var(--kaki);
-}
-
-.bg > img{
-    position: fixed;
-    z-index: -9;
-    bottom: 0;
-}
-.bg > img:first-child{
-    left: 0;
-    filter: drop-shadow(0 0 10px #ffffff48);
-}
-.bg > img:nth-child(2){
-    right: 0;
-    filter: drop-shadow(0 0 10px #ff000048);
+    border-top: 10px solid #AAA;
+    background-color: var(--grey);
 }
 
     /* SCROLLBAR */
@@ -187,7 +187,7 @@ main{
 .header__nav{
     width: 100vw;
     height: 30px;
-    background-image: linear-gradient(120deg,#353a39 30%,var(--black) 100%);
+    background-image: linear-gradient(120deg,var(--grey) 30%,var(--black) 100%);
     font-family: var(--louisgeorgecafe);
 }
 .header__nav > ul{
@@ -204,7 +204,7 @@ main{
     color: #FFF;
 }
 .header__nav > ul > li:hover{
-    color: var(--green);
+    color: var(--gold);
 }
 .header__nav > ul > li > a{
     color: inherit;
@@ -313,4 +313,14 @@ form > button{
     width: 100%;
     height: 50px;
     border-top: 1px solid var(--grey);
+}
+
+@media screen AND (max-width: 1000px){
+    .ag-content{
+        width: 100%;
+    }
+    .ag-content__header{
+        height: 200px;
+        box-shadow: inset 0 0 5em #000;
+    }
 }

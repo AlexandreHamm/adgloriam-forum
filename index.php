@@ -27,7 +27,7 @@
     <main>
         <section class="ag-content">
             <div class="ag-content__header">
-
+                <img src="src/img/header.png" alt="">
             </div>
             <div class="ag-content__body">
 
@@ -37,7 +37,9 @@
             </div>
         </section>
     </main>
-    <video src="src/vid/background.mp4" class='background' autoplay loop muted></video>
+    <footer>
+        
+    </footer>
     
     <script src="assets/app.js"></script>
 </body>
