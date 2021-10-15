@@ -31,9 +31,9 @@
     --scurlock: 'Scurlock', Arial, Sans-serif;
     --signature: 'Amalfi Coast', Arial, Sans-serif;
         /* COLORS */
-    --black: #222;
-    --gold: rgb(196, 176, 0);
-    --grey: #888;
+    --black: #494950;
+    --lightergrey: #7C7C81;
+    --grey: #68686E;
     --white: #FFF;
     --inputBorder: 1px solid rgb(172, 172, 172);
 }
@@ -59,8 +59,8 @@ main{
 }
 .ag-cookies{
     width: 100%;
-    height: 150px;
-    background-color: rgb(77, 63, 48);
+    height: 100px;
+    background-color: #4a4a5a;
     transition: .3s;
     overflow: hidden;
     display: flex;
@@ -78,37 +78,49 @@ main{
     border: 1px solid var(--black);
     border-image: url(../src/img/cell-border.png) 18 24/12px 16px 12px 15px/5px 7px round;
 }
-.ag-cookies__container > svg{
-    max-height: 100%;
+.ag-cookies > svg{
+    max-height: 90%;
 }
 .logo-path{
     fill: #CCC;
 }
+.ag-cookies__info{
+    padding-right: 30px;
+    color: #CCC;
+    font-size: 14px;
+    line-height: 17px;
+}
+.ag-cookies__info > b{
+    font-size: 16px;
+    line-height: 30px;
+}
 .ag-cookies__btns{
-    height: 95%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;    
 }
 .ag-cookies__btns > button{
+    position: relative;
     cursor: pointer;
     font-family: var(--dumbledor);
     font-size: 18px;
     color: #CCC;
     padding: 5px 15px;
     background: none;
-    border: 1px solid var(--white);
-    border-image: url(../src/img/cell-border.png) 25 24/12px 16px 12px 10px/5px 7px round;
+    border: 1px solid var(--lightergrey);
 }
 .ag-cookies__btns > button:hover{
-    filter: brightness(150%);
+    color: var(--black);
+    background-color: var(--white);
+    transition: .3s;
 }
 
 .ag-content{
     width: 50%;
     height: auto;
     background-color: var(--black);
-    box-shadow: 0 0 10px var(--black);
+    box-shadow: 0 0 10px #222;
 }
 .ag-content__header{
     width: 100%;
@@ -119,17 +131,27 @@ main{
     background-image: url(../src/img/marble.jpg);
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 0 6em 1em #000;
+    box-shadow: inset 0 0 6em 2em var(--black);
     opacity: 80%;
 }
 .ag-content__header > img{
     max-width: 110%;
     opacity: 80%;
+    filter: drop-shadow(0 0 1px var(--grey));
+}
+.divider{
+    width: 100%;
+    height: 20px;
+    /* background-color: var(--lightergrey); */
+    background-image: linear-gradient(120deg,var(--lightergrey) 20%,var(--black) 100%);
+    color: var(--grey);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 .ag-content__body{
     width: 100%;
     height: 200vh;
-    border-top: 10px solid #AAA;
     background-color: var(--grey);
 }
 
@@ -142,45 +164,12 @@ main{
     background-color: var(--grey);
 }
 ::-webkit-scrollbar-thumb{
-    background-color: var(--black);
+    background-color: var(--white);
 }
 
     /* HEADER */
 
-/* .header__title{
-    position: relative;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    position: absolute;
-    top: 42%;
-    left: 39%;
-    transform: translate(-50%, -50%);
-    font-size: 66px;
-    text-transform: uppercase;
-    background-image: linear-gradient(120deg,#8c9290 40%,#69706e 100%);
-    opacity: 60%;
-    font-family: var(--dumbledor);
-    border-bottom: 1px solid #69706e ;
-    filter: brightness(120%);
-}
-.header__title::after{
-    content: 'new world malva marauder company';
-    background-clip: inherit;
-    -webkit-background-clip: inherit;
-    position: absolute;
-    bottom: -40%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    filter: inherit;
-    font-size: 16px;
-    font-family: var(--louisgeorgecafe);
-    letter-spacing: 1.5px;
-    text-transform: inherit;
-    text-align: center;
-    background-image: inherit;
-} */
+
 
     /* NAVBAR */
 
@@ -202,15 +191,34 @@ main{
     align-items: center;
     margin-right: 10px;
     color: #FFF;
+    opacity: 80%;
+    transition: .3s;
 }
 .header__nav > ul > li:hover{
-    color: var(--gold);
+    opacity: 100%;
+    transition: .3s;
 }
 .header__nav > ul > li > a{
+    position: relative;
     color: inherit;
     text-transform: uppercase;
     font-size: 12px;
     text-decoration: none;
+}
+.header__nav > ul > li > a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid var(--white);
+    transition: .3s;
+}
+.header__nav > ul > li:hover > a::before{
+    width: 100%;
+    transition: .3s;
 }
 
 
