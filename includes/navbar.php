@@ -2,20 +2,17 @@
 
 if(!isset($_SESSION['auth'])){
 
-    echo "<nav class='header__nav'>
+    echo "<nav class='ad-header__nav'>
             <ul>
-                <li>
-                    <a href='./login.php'>Sign In</a>
-                </li>
-                <li>
-                    <a href='./signup.php'>Sign Up</a>
-                </li>
+                <li><a href='./index.php'>Home</a></li>
+                <li><a href='./login.php'>Sign In</a></li>
+                <li><a href='./signup.php'>Sign Up</a></li>
             </ul>
         </nav>";
 
 }else{
 
-    echo "<nav class='header__nav'>
+    echo "<nav class='ad-header__nav'>
             <ul>
                 <li><a href='./index.php'>Home</a></li>
                 <li><a href='./publish.php'>Publier</a></li>

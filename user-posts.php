@@ -1,15 +1,8 @@
 <?php 
     require('actions/posts/userPostsAction.php');
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'includes/head.php';?>
-<body>
-    <header>
-        <?php include 'includes/navbar.php'; ?>
-    </header>
-    <main>
+    include 'includes/header.php';
+?>
         <?php
 
             while($post = $getAllMyPosts->fetch()){
@@ -23,8 +16,5 @@
                 <?php
                 
             }
-            
+            include 'includes/footer.php';
         ?>
-    </main>
-</body>
-</html>

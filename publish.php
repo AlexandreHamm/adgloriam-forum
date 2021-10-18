@@ -1,15 +1,9 @@
 <?php 
     require('actions/users/securityAction.php');
     require('actions/posts/publishAction.php');
+
+    include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'includes/head.php';?>
-<body>
-    <header>
-        <?php include 'includes/navbar.php';?>
-    </header>
-    <main>
         <form method='POST'>
 
             <?php 
@@ -22,6 +16,6 @@
             <textarea class='form__input' id='content' name='content'></textarea>
             <button type='submit' name='valid'>Publier</button>
         </form>
-    </main>
-</body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

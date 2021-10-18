@@ -1,9 +1,8 @@
-<?php require('actions/users/signupAction.php'); ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'includes/head.php'; ?>
-<body>
-    <main>
+<?php 
+    require('actions/users/signupAction.php'); 
+
+    include 'includes/header.php';
+?>
         <form method='POST'>
 
             <?php 
@@ -22,7 +21,6 @@
             <button type='submit' name='valid'>Sign Up</button>
             <p>Already have an account ?<br><a href="./login.php">Sign in</a> !</p>
         </form>
-    </main>
-    <script src='./assets/app.js'></script>
-</body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

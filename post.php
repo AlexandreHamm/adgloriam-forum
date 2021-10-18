@@ -2,16 +2,8 @@
     require('actions/posts/showPostContentAction.php');
     require('actions/posts/postAnswersAction.php');
     require('actions/posts/showAllAnswersAction.php');
+    include 'includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'includes/head.php'; ?>
-<body>
-    <header>
-        <?php include 'includes/navbar.php'; ?>  
-    </header>  
-    <main>
 
         <?php
             if(isset($errorMsg)){
@@ -53,8 +45,5 @@
                 </section>
                 <?php
             }
+            include 'includes/footer.php';
         ?>
-    </main>
-
-</body>
-</html>

@@ -4,7 +4,9 @@ require('actions/database.php');
 
 if(isset($_SESSION['auth'])){
 
-    header('Location: index.php');
+    if (!stripos($_SERVER['REQUEST_URI'], 'index.php')){
+        header('Location: index.php');
+    }
 
 }else{
 
