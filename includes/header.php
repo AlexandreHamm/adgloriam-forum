@@ -32,4 +32,28 @@
             <!-- <div class="divider"></div> -->
             <div class="ad-content__body">
 
-            
+                <?php 
+                    if(!isset($_SESSION['auth'])){
+                        if (!stripos($_SERVER['REQUEST_URI'], 'login.php')){
+                ?>
+                <form method='POST' class='homeForm'>
+                    <?php if(isset($errorMsg)){
+                            header('Location: login.php');
+                        }
+                    ?>
+                    <input type="text" class='form__input' id='pseudo' name='pseudo' placeholder='Username' autocomplete='off'>
+                    <input type="password" class='form__input' id='password' name='pw' placeholder='Password'>
+                    <button type='submit' name='valid'>Login</button>
+                </form>
+                <?php 
+                        }
+                    }
+                ?>
+
+                <nav class='secondary-nav'>
+                    <ul>
+                        <li><a href="">temp</a></li>
+                        <li><a href="">temp</a></li>
+                        <li><a href="">temp</a></li>
+                    </ul>
+                </nav>

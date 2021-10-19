@@ -1,51 +1,43 @@
 <?php 
-    require('actions/posts/showPostsAction.php');
+    // require('actions/posts/showPostsAction.php');
+    require('actions/posts/showGroupsAction.php');
+    require('actions/posts/showSubsAction.php');
     require('actions/users/loginAction.php');
 
     include 'includes/header.php';
-
-    if(!isset($_SESSION['auth'])){
 ?>
-    <form method='POST' class='homeForm'>
-        <?php if(isset($errorMsg)){
-                header('Location: login.php');
-            }
+    <?php 
+        while($g = $groups->fetch()){
+            $categories->execute(array($g['id']));
         ?>
-        <input type="text" class='form__input' id='pseudo' name='pseudo' placeholder='Pseudo' autocomplete='off'>
-        <input type="password" class='form__input' id='password' name='pw' placeholder='Password'>
-        <button type='submit' name='valid'>Sign In</button>
-    </form>
+    <div class="groups">
+        <div class="group-title"><?php echo $g['name'];?></div>
+        <?php while($c = $categories->fetch()){
+            $subs->execute(array($c['id']));
+            ?>
+            <div class="categories <?php echo $c['name'];?>">
+                <div class="l-block">
+                    <a href=""><h3 class='l-title'><?php echo $c['name']?></h3></a>
+                    <p class='desc'>Follow the rules.</p>
+                    <div class="subs">
+                        <?php while($sub = $subs->fetch()){?><a href=""><?php echo $sub['name']?></a><?php }?>
+                    </div>
+                </div>
+                <div class="r-block">
+                    <h3 class="r-title">Last Post</h3>
+                    <div class="last-post">
+                        <a href=""><h6 class='last-post-title'>Last Post Title</h6></a>
+                        <p class="last-post-date">Lun 18 Oct - 4:15pm</p>
+                        <a href="profile.php?id=<?php // echo $post_author_id ?>">Admin</a>
+                    </div>
+                    <div class="user-pp">
+                        NONE
+                    </div>
+                </div>
+            </div>
+        <?php }?>
+    </div>
     <?php }?>
-
-    <nav>NAVBAR TO BUILDS AND CO HERE</nav>
-    
-    <div class="groups">
-        <div class="group-title">English Section</div>
-        <div class="categories">Cat1</div>
-        <div class="categories">Cat2</div>
-        <div class="categories">Cat3</div>
-    </div>
-
-    <div class="groups">
-        <div class="group-title">French Section</div>
-        <div class="categories">Cat1</div>
-        <div class="categories">Cat2</div>
-        <div class="categories">Cat3</div>
-    </div>
-
-    <div class="groups">
-        <div class="group-title">Section</div>
-        <div class="categories">Cat1</div>
-        <div class="categories">Cat2</div>
-        <div class="categories">Cat3</div>
-    </div>
-
-    <div class="groups">
-        <div class="group-title">Section</div>
-        <div class="categories">Cat1</div>
-        <div class="categories">Cat2</div>
-        <div class="categories">Cat3</div>
-    </div>
 <?php 
     include 'includes/footer.php';
 ?>
