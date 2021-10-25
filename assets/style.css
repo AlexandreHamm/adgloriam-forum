@@ -22,6 +22,14 @@
     font-family: 'OldStyle';
     src: url(../src/fonts/OldStyle.TTF);
 }
+@font-face {
+    font-family: 'Swiss 721';
+    src: url(../src/fonts/Swiss\ 721.ttf);
+}
+@font-face {
+    font-family: 'Trajan';
+    src: url(../src/fonts/Trajan\ Pro.otf);
+}
 :root{
         /* FONTS */
     --dumbledor: 'Dumbledor', Arial, Sans-serif;
@@ -29,12 +37,15 @@
     --louisgeorgecafe: 'Louis George Cafe', Arial, Sans-serif;
     --oldstyle: 'OldStyle', Arial, Serif;
     --scurlock: 'Scurlock', Arial, Sans-serif;
+    --swiss721: 'Swiss 721', Arial, Sans-serif;
+    --trajan: 'Trajan', Arial, Serif;
+
     --signature: 'Amalfi Coast', Arial, Sans-serif;
         /* COLORS */
-    --black: #494950;
-    --lightergrey: #7C7C81;
-    --grey: #68686E;
-    --white: #FFF;
+    --black: #4b4b4d;
+    --lightergrey: #67676b;
+    --grey: #838388;
+    --white: #F2F2F2;
     --inputBorder: 1px solid rgb(172, 172, 172);
 }
 *{
@@ -42,6 +53,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    list-style: none;
 }
 body{
     width: 100vw;
@@ -70,6 +82,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--trajan);
 }
 .ad-cookies__infoIcon{
     position: relative;
@@ -99,12 +112,12 @@ main{
 .ad-cookies__info{
     padding-right: 30px;
     color: #CCC;
-    font-size: 14px;
+    font-size: 11px;
     line-height: 17px;
 }
 .ad-cookies__info > b{
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 12px;
+    line-height: 25px;
 }
 .ad-cookies__btns{
     height: 80%;
@@ -115,8 +128,8 @@ main{
 .ad-cookies__btns > button{
     position: relative;
     cursor: pointer;
-    font-family: var(--dumbledor);
-    font-size: 18px;
+    font-family: var(--trajan);
+    font-size: 12px;
     color: #CCC;
     padding: 5px 15px;
     background: none;
@@ -127,19 +140,6 @@ main{
     background-color: var(--white);
     transition: .3s;
 }
-
-    /* DIVIDER */
-
-/* .ad-divider{
-    width: 100%;
-    height: 20px;
-    background-color: var(--lightergrey);
-    background-image: linear-gradient(120deg,var(--lightergrey) 20%,var(--black) 100%);
-    color: var(--grey);
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-} */
 
     /* SCROLLBAR */
 
@@ -169,9 +169,7 @@ main{
     justify-content: flex-end;
 }
 .ad-header__nav > ul > li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
     margin-right: 10px;
     color: #FFF;
     opacity: 80%;
@@ -182,10 +180,14 @@ main{
     transition: .3s;
 }
 .ad-header__nav > ul > li > a{
+    height: 100%;
     position: relative;
     color: inherit;
     text-transform: uppercase;
     font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ad-header__nav > ul > li > a::before{
     content: '';
@@ -194,8 +196,7 @@ main{
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 100%;
-    border-bottom: 1px solid var(--white);
+    border-top: 2px solid var(--white);
     transition: .3s;
 }
 .ad-header__nav > ul > li:hover > a::before{
@@ -215,13 +216,13 @@ main{
     background-image: url(../src/img/marble.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(.5px);
-    box-shadow: inset 0 0 6em 2em var(--black);
-    opacity: 80%;
+    filter: blur(.5px) brightness(100%);
+    box-shadow: inset 0 0 2em 3px var(--black);
+    opacity: 90%;
 }
 .ad-content__header > img{
     max-width: 110%;
-    opacity: 80%;
+    opacity: 90%;
     filter: drop-shadow(0 0 .1px var(--grey));
 }
 
@@ -369,9 +370,11 @@ form > button{
 }
 .ad-content__body{
     width: 100%;
-    min-height: calc(100vh - 330px);
+    min-height: calc(100% - 330px);
+    padding-bottom: 50px;
     background-color: var(--grey);
-    /* border-top: 10px solid var(--lightergrey); */
+    /* background-image: url(../src/img/); */
+    filter: drop-shadow(0 0 3px var(--black));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -386,35 +389,161 @@ form > button{
 }
 .group-title, .categories{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 }
 .group-title{
+    padding-left: 30px;
     height: 50px;
-    background-image: url(../src/img/grouptile.png);
-    color: var(--white);
-    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-image: url(../src/img/grouptile.png);
+    background-position: center;
+    background-size: cover; */
+    color: rgba(180, 186, 190, 0.5);
+    font-family: var(--trajan);
+    font-size: 20px;
     font-weight: bold;
+    letter-spacing: 1px;
+    filter: grayscale(70%) brightness(150%) drop-shadow(1px 1px 1px #444);
+    /* text-shadow: 0px 1px 0px #111, 0px 3px 50px rgba(255, 255, 255, 0.5); */
+    /* 0px 1px 0px rgba(187, 187, 187, .4), 0px -1px 0px rgba(0,0,0,.8); */
 }
 .categories{
-    height: 200px;
+    position: relative;
+    height: 230px;
     margin-top: 10px;
-    opacity: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 1px rgba(34, 34, 34, 0.5);
+}
+.cat-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
     background-color: var(--white);
-    background-image: url(../src/img/marble.jpg);
+    background-image: url(../src/img/categorytile.jpg);
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 0 4em .3em var(--black);
+    filter: grayscale(70%) brightness(200%);
+    opacity: 30%;
+}
+.categories:nth-child(3) > .cat-bg{
+    background-image: url(../src/img/categorytile2.png);
+}
+.categories:hover > .cat-bg{
+    filter: grayscale(20%) brightness(200%);
+    opacity: 40%;
+}
+.l-block, .r-block{
+    z-index: 1;
+}
+    /* CATEGORIES LEFT BLOCK */
+
+.l-block{
+    padding-left: 10%;
+    height: 90%;
+    width: 60%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.categories:hover{
-    opacity: 90%;
+.l-title{
+    width: 100%;
+    color: transparent;
+    border-bottom: 1px solid #111;
+    text-shadow: 0px 1px 0px #111, 0px 3px 50px rgba(255, 255, 255, 0.5);
 }
-.categories h3{
-    font-weight: bold;
+.desc{
+    height: 100%;
+    padding: 5px 0;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+}
+.subs > a{
+    padding: 5px 15px;
+    background-color: #000;
+    opacity: 60%;
+    font-family: var(--louisgeorgecafe);
+    font-size: 12px;
     text-transform: uppercase;
+    color: var(--white);
+    backdrop-filter: blur(30px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.subs > a:hover{
+    opacity: 75%;
+}
+
+    /* CATEGORIES RIGHT BLOCK */
+
+.r-block{
+    padding: 10px;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h3, h6, .last-post a{
+    font-family: var(--trajan);
+    
+}
+.r-title{
+    margin-left: -2px;
+    font-size: 28px;
+    color: #111;
+}
+.last-post{
+    padding: 2px;
+}
+.last-post-title{
+    font-size: 12px;
+    color: var(--white);
+}
+.last-post a{
+    font-size: 14px;
+}
+.last-post-date{
+    font-size: 11px;
+    margin: 2px 0;
+}
+.last-post-user-pp{
+    padding: 3px;
+    width: 75px;
+    height: 75px;
+    border: 3px solid var(--lightergrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.last-post-user-pp img{
+    height: 200%;
+}
+
+.marauders{
+    color: rgb(58, 95, 58);
+    font-weight: bold;
+}
+.covenant{
+    color: rgb(184, 181, 57);
+    font-weight: bold;
+}
+.syndicate{
+    color: rgb(99, 0, 165);
+    font-weight: bold;
+}
+.superadmin{
+    color: rgb(165, 28, 28);
+    font-weight: bold;
 }
 
     /* CARDS */
@@ -456,11 +585,47 @@ form > button{
 }
 
 @media screen AND (max-width: 1000px){
-    .ag-content{
+    .ad-content{
         width: 100%;
     }
-    .ag-content__header{
+    .ad-content__header{
         height: 200px;
         box-shadow: inset 0 0 5em #000;
     }
+    .groups{
+        width: 100%;
+    }
+}
+
+.marauders, .covenant, .syndicate, .superadmin{
+    text-transform: capitalize;
+}
+.qeel{
+    width: 80%;
+    min-height: 300px;
+    margin-top: 30px;
+    font-family: var(--trajan);
+    box-shadow: 1px 1px 1px rgba(68, 68, 68, 0.8);
+    filter: brightness(90%);
+}
+.qeel-header{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 30px;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+.qeel-body{
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    padding: 20px;
+    font-size: 12px;
+    background-color: #BBB;
+    background-image: url(../src/img/marble.jpg);
+    background-position: center;
+    background-size: cover;
 }

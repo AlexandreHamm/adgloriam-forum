@@ -9,7 +9,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
     $userID = $_GET['id'];
 
     // CHECK IF USER EXISTS
-    $checkIfUserExists = $db->prepare('SELECT pseudo FROM users WHERE id = ?');
+    $checkIfUserExists = $db->prepare('SELECT * FROM users WHERE id = ?');
     $checkIfUserExists->execute(array($userID));
 
     if($checkIfUserExists->rowCount() > 0){

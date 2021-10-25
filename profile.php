@@ -11,7 +11,9 @@
             if(isset($getUserPosts)){
         ?>
         <div class="profile__header">
-            <?php echo $user_pseudo;?>
+            <?php echo $user_pseudo;
+                echo $userInfos['title'];?>
+
         </div>
         <div class="profile__content">        
         <?php

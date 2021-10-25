@@ -1,3 +1,5 @@
+<?php require('actions/users/lastLoginAction.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php';?>
@@ -13,8 +15,8 @@
         </svg> -->
         <div class="ad-cookies__info">
             <b>Sélectionnez vos préférences en matière de cookies</b><br>
-            Nous utilisons des cookies et d’autres outils similaires pour vous fournir, ainsi que comprendre comment nos utilisateurs<br>
-            utilisent nos services afin de les améliorer. 
+            Nous utilisons des cookies et d’autres outils similaires pour vous fournir, ainsi <br>
+            que comprendre, comment nos utilisateurs utilisent nos services afin de les améliorer. 
         </div>
         <div class="ad-cookies__btns">
             <button>Accepter les cookies</button>
@@ -52,8 +54,8 @@
 
                 <nav class='secondary-nav'>
                     <ul>
-                        <li><a href="">temp</a></li>
-                        <li><a href="">temp</a></li>
-                        <li><a href="">temp</a></li>
+                        <li><a href="">nav</a></li>
+                        <li><a href="">nav</a></li>
+                        <li><a href="">nav</a></li>
                     </ul>
                 </nav>
