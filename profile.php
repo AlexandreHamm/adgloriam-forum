@@ -11,9 +11,11 @@
             if(isset($getUserPosts)){
         ?>
         <div class="profile__header">
-            <?php echo $user_pseudo;
-                echo $userInfos['title'];?>
-
+            <?php echo '<div class="temp"><h5 class="name '.$userInfos['faction'].'">'.$user_pseudo.'</h5><h6 class="title">'.$userInfos['title'].'</h6><img src="users/users_profile_pictures/'.$userInfos['pp'].'"></div>';
+                if($_SESSION['id'] == $_GET['id']){
+            ?>
+            <a href="edit-profile.php?id=<?php echo $_GET['id']?>">Editer mon profil</a>
+            <?php }?>
         </div>
         <div class="profile__content">        
         <?php
