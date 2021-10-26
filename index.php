@@ -22,11 +22,13 @@
             $lp = $lastpost->fetch();
             $user->execute(array($lp['author_id']));
             $userInfos = $user->fetch();
+            $lastpostpp->execute(array($lp['author_id']));
+            $lppp = $lastpostpp->fetch();
             ?>
             <div class="categories <?php echo $c['name'];?>">
                 <div class="cat-bg"></div>
                 <div class="l-block">
-                    <a href=""><h3 class='l-title'><?php echo $c['name']?></h3></a>
+                    <a href="./categories.php?category=<?php echo $c['id'];?>"><h3 class='l-title'><?php echo $c['name']?></h3></a>
                     <p class='desc'>Follow the rules.</p>
                     <div class="subs">
                         <?php while($sub = $subs->fetch()){?><a href=""><?php echo $sub['name']?></a><?php }?>
@@ -40,7 +42,7 @@
                         <a href="profile.php?id=<?php echo $lp['author_id'];?>" class='<?php echo $userInfos['faction'];?>'><?php echo $lp['author_pseudo'];?></a>
                     </div>
                     <div class="last-post-user-pp">
-                        <img src="./src/img/SM-placeholder.png" alt="">
+                        <a href="profile.php?id=<?php echo $lp['author_id'];?>"><img src="users/users_profile_pictures/<?php echo $lppp['pp']?>" alt=""></a>
                     </div>
                 </div>
             </div>

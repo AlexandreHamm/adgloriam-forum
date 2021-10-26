@@ -10,11 +10,19 @@ if(isset($_POST['valid'])){
         $posts_author_id = $_SESSION['id'];
         $posts_author_pseudo = $_SESSION['pseudo'];
 
-        $insertPosts = $db->prepare('INSERT INTO posts(title, content, author_id, author_pseudo, publication_date)VALUES(?, ?, ?, ?, ?)');
+        if(isset($_GET['subcategory'])){
+            $sub_post = $_GET['subcategory'];
+        }else{
+            $sub_post = 0;
+        }
+
+        $insertPosts = $db->prepare('INSERT INTO posts(title, content, category, subcategory, author_id, author_pseudo, publication_date)VALUES(?, ?, ?, ?, ?, ?, ?)');
         $insertPosts->execute(
             array(
                 $posts_title, 
-                $posts_content, 
+                $posts_content,
+                $_GET['category'],
+                $sub_post,
                 $posts_author_id, 
                 $posts_author_pseudo, 
                 $posts_date
