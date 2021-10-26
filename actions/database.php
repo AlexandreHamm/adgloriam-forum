@@ -3,7 +3,7 @@ if(!isset($_SESSION)) {
     session_start();
 }
 try{
-    $db = new PDO('mysql:host=localhost;dbname=forum;charset=utf8;', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=forum;charset=utf8;', 'alexandreh', 'qCPwobB/1HD+vw==');
 }catch(Exception $e){
     die('Error ' . $e->getMessage());
 }
