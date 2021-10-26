@@ -207,7 +207,7 @@ main{
 
     /* HEADER */
 
-.ad-content__header{
+.ag-content__header{
     width: 100%;
     height: 300px;
     display: flex;
@@ -221,7 +221,7 @@ main{
     box-shadow: inset 0 0 2em 3px var(--black);
     opacity: 90%;
 }
-.ad-content__header > img{
+.ag-content__header > img{
     max-width: 110%;
     opacity: 90%;
     filter: drop-shadow(0 0 .1px var(--grey));
@@ -364,14 +364,14 @@ form > button{
 
     /* CONTENT */
 
-.ad-content{
+.ag-content{
     width: 50%;
     height: auto;
     min-height: 100%;
     background-color: var(--black);
     box-shadow: 0 0 10px #222;
 }
-.ad-content__body{
+.ag-content__body{
     width: 100%;
     min-height: calc(100% - 300px);
     padding-bottom: 50px;
@@ -592,10 +592,10 @@ h3, h6, .last-post a{
 }
 
 @media screen AND (max-width: 1000px){
-    .ad-content{
+    .ag-content{
         width: 100%;
     }
-    .ad-content__header{
+    .ag-content__header{
         height: 200px;
         box-shadow: inset 0 0 5em #000;
     }

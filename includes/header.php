@@ -27,12 +27,12 @@
         <?php include 'includes/navbar.php'?>
     </header>
     <main>
-        <section class="ad-content">
-            <div class="ad-content__header">
+        <section class="ag-content">
+            <div class="ag-content__header">
                 <img src="src/img/header.png" alt="" draggable='false'>
             </div>
             <!-- <div class="divider"></div> -->
-            <div class="ad-content__body">
+            <div class="ag-content__body">
 
                 <?php 
                     if(!isset($_SESSION['auth'])){
