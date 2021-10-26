@@ -6,18 +6,18 @@ document.querySelector('.ad-cookies__btns > button').addEventListener('click',fu
     }, 300);
 });
 
-if(window.location.pathname == '/profile.php') {
-    let rotate = 0;
+// if(window.location.pathname.includes('profile')) {
+//     let rotate = 0;
 
-    document.querySelector('.profile_infos > svg').addEventListener('click', function(){
-        if(rotate == 0){
-            document.querySelector('.profile_infos').style.height = '50%';
-            document.querySelector('.profile_infos > svg').style.transform = 'translateX(-50%) rotate(0)';
-            rotate++;
-        }else{
-            document.querySelector('.profile_infos').style.height = '10px';
-            document.querySelector('.profile_infos > svg').style.transform = 'translateX(-50%) rotate(180deg)';
-            rotate = 0;
-        }
-    });
-}
+//     document.querySelector('.profile_infos > svg').addEventListener('click', function(){
+//         if(rotate == 0){
+//             document.querySelector('.profile_infos').style.height = '50%';
+//             document.querySelector('.profile_infos > svg').style.transform = 'translateX(-50%) rotate(0)';
+//             rotate++;
+//         }else{
+//             document.querySelector('.profile_infos').style.height = '10px';
+//             document.querySelector('.profile_infos > svg').style.transform = 'translateX(-50%) rotate(180deg)';
+//             rotate = 0;
+//         }
+//     });
+// }
