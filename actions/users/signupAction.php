@@ -10,6 +10,8 @@ if(isset($_SESSION['auth'])){
 
     // VALIDATION DU FORMULAIRE
     if(isset($_POST['valid'])){
+        // var_dump($_POST);
+        // die();
 
         // VERIFIER SI USER A BIEN COMPLETE TOUS LES CHAMPS
         if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mailConfirm']) AND !empty($_POST['pw']) AND !empty($_POST['pwConfirm'])){
@@ -28,9 +30,6 @@ if(isset($_SESSION['auth'])){
                 // INSERT USER IN DATABASE
                 $insertUserOnWebsite = $db->prepare('INSERT INTO users(pseudo, email, password)VALUES(?, ?, ?)');
                 $insertUserOnWebsite->execute(array($user_pseudo, $user_mail, $user_password));
-
-                var_dump($insertUserOnWebsite);
-                die();
 
                 // GET USER INFO
                 $getInfoOfThisUserReq = $db->prepare('SELECT id FROM users WHERE pseudo = ?');
