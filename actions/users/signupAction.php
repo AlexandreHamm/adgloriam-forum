@@ -29,6 +29,9 @@ if(isset($_SESSION['auth'])){
                 $insertUserOnWebsite = $db->prepare('INSERT INTO users(pseudo, email, password)VALUES(?, ?, ?)');
                 $insertUserOnWebsite->execute(array($user_pseudo, $user_mail, $user_password));
 
+                var_dump($insertUserOnWebsite);
+                die();
+
                 // GET USER INFO
                 $getInfoOfThisUserReq = $db->prepare('SELECT id FROM users WHERE pseudo = ?');
                 $getInfoOfThisUserReq->execute(array($user_pseudo));
