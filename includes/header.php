@@ -37,6 +37,7 @@
                 <?php 
                     if(!isset($_SESSION['auth'])){
                         if (!stripos($_SERVER['REQUEST_URI'], 'login.php')){
+                            if(!stripos($_SERVER['REQUEST_URI'], 'signup.php')){
                 ?>
                 <form method='POST' class='homeForm'>
                     <?php if(isset($errorMsg)){
@@ -47,7 +48,7 @@
                     <input type="password" class='form__input' id='password' name='pw' placeholder='Password'>
                     <button type='submit' name='valid'>Login</button>
                 </form>
-                <?php 
+                <?php       }
                         }
                     }
                 ?>

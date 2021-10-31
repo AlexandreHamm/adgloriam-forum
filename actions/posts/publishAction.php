@@ -6,7 +6,7 @@ if(isset($_POST['valid'])){
         
         $posts_title = htmlspecialchars($_POST['title']);
         $posts_content = nl2br(htmlspecialchars($_POST['content']));
-        $posts_date = date('m/d/Y');
+        $posts_date = date('m/d/Y H:i');
         $posts_author_id = $_SESSION['id'];
         $posts_author_pseudo = $_SESSION['pseudo'];
 

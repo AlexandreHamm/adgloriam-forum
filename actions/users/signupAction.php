@@ -25,6 +25,9 @@ if(isset($_SESSION['auth'])){
             $checkIfUserAlreadyExists = $db->prepare('SELECT pseudo FROM users WHERE pseudo = ?');
             $checkIfUserAlreadyExists->execute(array($user_pseudo));
 
+            // var_dump($checkIfUserAlreadyExists->rowCount());
+            // die();
+
             if($checkIfUserAlreadyExists->rowCount() == 0){
 
                 // INSERT USER IN DATABASE

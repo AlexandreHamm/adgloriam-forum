@@ -15,8 +15,6 @@ if(!isset($_SESSION['auth'])){
     echo "<nav class='ad-header__nav'>
             <ul>
                 <li><a href='./index.php'>Home</a></li>
-                <li><a href='./publish.php'>Publier</a></li>
-                <li><a href='./user-posts.php'>Posts</a></li>
                 <li><a href='./profile.php?id=".$_SESSION['id']."'>Profile</a></li>
                 <li><a href='./actions/users/logoutAction.php'>Log Out</a></li>
             </ul>
